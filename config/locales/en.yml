@@ -1,0 +1,17 @@
+en:
+  errors:
+    messages:
+      certification_authority_missing: '(certification authority) not specified'
+      already_certified: 'was already certified!'
+
+
+  devise:
+    failure:
+      :uncertificated: 'Your account needs to be certificated.'
+    mailer:
+      certification_request:
+        subject: 'Certification request'
+    certifications:
+      certification_token_invalid: 'The certification token provided is not valid!'
+      certified: 'Successfuly certified user'
+      
