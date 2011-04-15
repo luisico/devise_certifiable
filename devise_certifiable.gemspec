@@ -6,14 +6,14 @@ Gem::Specification.new do |s|
   s.name        = "devise_certifiable"
   s.version     = DeviseCertifiable::VERSION
   s.platform    = Gem::Platform::RUBY
-  s.authors     = ["TODO: Write your name"]
-  s.email       = ["TODO: Write your email address"]
-  s.homepage    = ""
-  s.summary     = %q{TODO: Write a gem summary}
-  s.description = %q{TODO: Write a gem description}
+  s.authors     = ["Luis Gracia"]
+  s.email       = ["lgraval@gmail.com"]
+  s.homepage    = "https://github.com/luisico/devise_certifiable"
+  s.summary     = %q{Sign up certification strategy for devise}
+  s.description = %q{New sign ups need to be certified before they can sign in}
 
-  s.rubyforge_project = "devise_certifiable"
-
+  s.add_dependency('devise', '~> 1.2')
+  
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
   s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }

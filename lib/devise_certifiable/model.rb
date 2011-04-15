@@ -13,7 +13,7 @@ module Devise
       def certify!(certification_authority)
         unless_certified do
           unless certification_authority.nil?
-#            self.certification_token = nil
+            self.certification_token = nil
             self.certified_at = Time.now
             self.certified_by = certification_authority
             save(:validate => false)

@@ -8,26 +8,7 @@
       <td><%= f.label :email %></td>
       <td><%= f.label :email, resource.email %></td>
     </tr>
-    <tr>
-      <td><%= f.label :firstname %></td>
-      <td><%= f.label :firstname, resource.firstname %></td>
-    </tr>
-    <tr>
-      <td><%= f.label :lastname %></td>
-      <td><%= f.label :lastname, resource.lastname %></td>
-    </tr>
-    <% if can? :update_role, User -%>
-    <tr>
-      <td><%= f.label :role %></td>
-      <td><%= f.select :role, User::ROLES %></td>
-    </tr>
-    <% end -%>
-    <% if can? :update_group, User -%>
-    <tr>
-      <td><%= f.label :group %></td>
-      <td><%= f.collection_select :group_id, Group.all, :id, :name %></td>
-    </tr>
-    <% end -%>
   </table>
+  <%= f.hidden_field :certification_token -%>
   <p><%= f.submit "Certify" %></p>
 <% end %>
