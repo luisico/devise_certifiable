@@ -10,7 +10,7 @@ class Devise::CertificationsController < ApplicationController
       render_with_scope :edit
     else
       set_flash_message(:alert, :certification_token_invalid)
-      redirect_to after_sign_out_path_for(resource_name)
+      redirect_to self.resource
     end
   end
 

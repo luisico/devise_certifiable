@@ -1,6 +1,6 @@
 = devise_certifiable
 
-Sign up certification strategy for devise[http://github.com/plataformatec/devise]. New sign ups need to be certified before they can sign in. After sign up an email is sent to the email address specified in the devise configuration.
+Sign up certification strategy for devise[http://github.com/plataformatec/devise]. New sign ups need to be certified before they can sign in. After sign up an email is sent to the email address specified in the devise configuration option 'config.mailer_sender'.
 
 DeviseConfirmable was developed with Devise 1.2.1 and Rails 3.0.6 using ActiveRecord.
 
