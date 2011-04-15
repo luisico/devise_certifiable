@@ -1,0 +1,3 @@
+module DeviseCertifiable
+  # Your code goes here...
+end
