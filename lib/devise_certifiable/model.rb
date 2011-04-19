@@ -12,7 +12,7 @@ module Devise
       
       def certify!(certification_authority)
         unless_certified do
-          unless certification_authority.nil?
+          unless certification_authority.blank?
             self.certification_token = nil
             self.certified_at = Time.now
             self.certified_by = certification_authority
@@ -40,7 +40,7 @@ module Devise
       end
       
       def inactive_message
-        !certified? ? :uncertificated : super
+        !certified? ? :uncertified : super
       end
       protected
       

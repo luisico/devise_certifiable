@@ -7,7 +7,7 @@ en:
 
   devise:
     failure:
-      :uncertificated: 'Your account needs to be certificated.'
+      :uncertified: 'Your account needs to be certified.'
     mailer:
       certification_request:
         subject: 'Certification request'

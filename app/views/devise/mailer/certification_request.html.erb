@@ -2,9 +2,7 @@
 
 <p>The following user has requested access to the site:</p>
 <table>
-  <tr><td>First Name:</td><td><%= @resource.firstname %></td></tr>
-  <tr><td>Last Name::</td><td><%= @resource.lastname %></td></tr>
   <tr><td>Email:</td><td><%= @resource.email %></td></tr>
 </table>
 
-  <p><%= link_to 'Certify', edit_certification_url(@resource, :certification_token => @resource.certification_token) %></p>
+<p><%= link_to 'Certify', edit_certification_url(@resource, :certification_token => @resource.certification_token) %></p>
