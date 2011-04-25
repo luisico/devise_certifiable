@@ -50,4 +50,4 @@ This will copy the locale file to your rails tree.
 
 == Copyright
 
-Copyright (c) 2011 Luis Gracia. See MIT-LICENSE for further details.
+Copyright (c) 2011 Luis Gracia. See LICENSE for further details.
