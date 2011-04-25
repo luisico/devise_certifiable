@@ -1,29 +1,42 @@
 = devise_certifiable
 
-Sign up certification strategy for devise[http://github.com/plataformatec/devise]. New sign ups need to be certified before they can sign in. After sign up an email is sent to the email address specified in the devise configuration option 'config.mailer_sender'.
+Sign up certification strategy for devise[http://github.com/plataformatec/devise]. New sign up users need to be certified before they can sign in. After sign up an email is sent to the email address specified in the devise configuration option _config.mailer_sender_.
 
-DeviseConfirmable was developed with Devise 1.2.1 and Rails 3.0.6 using ActiveRecord.
+Devise_certifiable has been tested with Devise 1.2.1 and Rails 3.0.6 using ActiveRecord, but similar version should work as well (ie. Devise 1.2.x and Rails 3.0.x). 
 
 == Installation
 
- rails generate devise_certifiable:install
-
  rails generate devise_certifiable MODEL
+
+will add _:certifiable_ to model _MODEL_ and create a migration file.
 
 == Configuration
 
-There are no configuration options for the model.
+There are no configuration options at the moment.
 
 === Controllers
 
- before_filter :authenticate_certifier!
+By default devise_certifiable follows Devise authentication to allow certifications. You can customize how to authenticate for a certifier overriding _:authenticate_certifier!_ in _application_controller.rb_. For example using CanCan[https://github.com/ryanb/cancan]:
+
+ def authenticate_certifier!
+    authorize! :certify, User
+  end
 
 === Views
 
- app/views/devise/certifications/edit.html.erb
- app/views/devise/mailer/certification_request.html.erb
+You can customize the views and mails by doing:
+
+ rails generate devise_certifiable:install views
+
+This will copy the views to app/views/devise.
 
 === Localization
+
+Localization can be customized by:
+
+ rails generate devise_certifiable:install
+
+This will copy the locale file to your rails tree.
 
 == Contributing to devise_certifiable
  
