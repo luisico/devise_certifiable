@@ -11,7 +11,6 @@ require "orm/#{DEVISE_ORM}"
 
 I18n.load_path << File.expand_path("../support/locale/en.yml", __FILE__)
 
-
 # Add support helpers
 $:.unshift File.expand_path('../support', __FILE__)
 Dir["#{File.dirname(__FILE__)}/support/**/*.rb"].each { |f| require f }

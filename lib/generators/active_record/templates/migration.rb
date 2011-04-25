@@ -11,7 +11,7 @@ class DeviseCertifiableAddTo<%= table_name.camelize %> < ActiveRecord::Migration
   
   def self.down
     change_table :<%= table_name %> do |t|
-      t.remove_references :certified_by
+      t.remove_references :certified_by, :polymorphic => true
       t.remove :certification_token, :certified_at
     end
   end

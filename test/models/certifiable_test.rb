@@ -129,6 +129,15 @@ class CertifiableTest < ActiveSupport::TestCase
     assert_not_nil user.reload.certification_token
   end
 
+  test 'should automatically certify new invited user with inviter' do
+    admin = create_user
+    user = User.invite!(
+      { :username => "usertest", :email => generate_unique_email }, admin)
+    assert_nil user.reload.certification_token
+    assert_not_nil user.certified_at
+    assert_equal user.certified_by, admin
+  end
+
   test 'should not send instructions if the user is already certified' do
     admin = create_user
     user = create_user

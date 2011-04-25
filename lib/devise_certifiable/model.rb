@@ -31,8 +31,12 @@ module Devise
 
       # Deliver certification request to certification authority
       def request_certification
-        generate_certification_token! if self.certification_token.nil?
-        ::Devise.mailer.certification_request(self).deliver
+        if self.respond_to?(:invite!) && self.invitation_token.present?
+          certify!(self.invited_by)
+        else
+          generate_certification_token! if self.certification_token.nil?
+          ::Devise.mailer.certification_request(self).deliver
+        end
       end
       
       def active_for_authentication?
