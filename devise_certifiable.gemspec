@@ -13,7 +13,7 @@ Gem::Specification.new do |s|
   s.description = %q{New sign ups need to be certified before they can sign in}
 
   s.add_dependency('rails',  '~> 3.0.0')
-  s.add_dependency('devise', '~> 1.2.0')
+  s.add_dependency('devise', ['>= 1.2.0', '<= 1.4.0'])
 
   s.add_development_dependency('devise_invitable', '~> 0.4.0')
   s.add_development_dependency('bundler', '~> 1.0.12')
